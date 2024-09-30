@@ -9,17 +9,39 @@
     }
 }
 
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #580190 #370058;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #370058;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #370058;
+  border-radius: 20px;
+  border: 3px solid #370058;
+}
+
 body {
-    font-family: Montsserat, sans-serif !important;
+    font-family: "Montserrat", sans-serif !important;
     background-color: rgb(85, 110, 110);
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    /* negrito */
     /* Evita barras de rolagem */
 }
 
 .navbar {
-    flex-shrink: 0;
+    /* flex-shrink: 0; */
     background-color: #370058 !important;
 }
 
@@ -40,8 +62,10 @@ html {
     animation-duration: 1s;
     width: 40%;
     background-color: #580190;
-
     padding: 1rem;
+    height: calc(100vh - 56px);
+    overflow-y: auto;
+
 }
 
 #map {
@@ -69,27 +93,41 @@ body {
   border-radius: 10px;
   box-shadow: 10px 10px #f95353 !important;
   padding-top: 20px;
-  width: 50%;
-  height: 40%;
+  width: 13rem;
+  height: 15.5rem;
   text-align: center;
   margin: 1rem;
   color: white;
   animation-delay: 0.3s;
+  padding-left: 1.2rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
 }
 
+.cardHead{
+  height: 7rem;
+}
+
+.card-infos{
+  margin-top: 0px ;
+  margin-bottom: 0px ;
+}
+
+
   #title {
-    font-size: 22px;
+    font-size: 13px;
     color: white;
   }
   
   #subtitle {
-    font-size: 14px;
+    font-size: 13px;
     color: #BDC3C7;
+    /* margin-bottom: 2rem; */
   }
   
   #leader, #day, #time {
-    font-size: 14px;
-    margin: 10px 0;
+    font-size: 12px;
+    /* margin: 0px 0; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,17 +141,25 @@ body {
     background-color: transparent;
     color: white;
     border: 2px solid #f95353;
+    /* sombra suave */
+    box-shadow: 0 0 5px #f95353;
     padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
+    font-size: 13px;
+    border-radius: 25px;
     cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    animation-delay: 1s;
+    margin-top: 8px !important;
+    margin-bottom: 30px;
+    /* animation-delay: 1s; */
+    width: 100%;
+    transition: all .2s ease-in-out;
+    margin-top: auto;
   }
+  
   
   #cta-button:hover {
     background-color: #62009b;
     color: white;
+    margin-top: 5px !important;
+    
   }
   
