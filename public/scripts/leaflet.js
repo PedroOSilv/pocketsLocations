@@ -17,6 +17,18 @@ var fireIcon = L.icon({
     popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
 });
 
+// address = "Rua 15 de Novembro, 1000, Centro, São Paulo, SP, Brasil";
+
+// $.get(location.protocol + '//nominatim.openstreetmap.org/search?format=json&q='+address, function(data){
+//     address = data[0];
+//     console.log(address);
+//  });
+
+// //espera o retorno da api
+// while(address == "Rua 15 de Novembro, 1000, Centro, São Paulo, SP, Brasil"){
+//     setTimeout(function(){}, 1000);
+// }
+
 // Array de pontos (latitude e longitude)
 var points = [
     { lat: -19.633079983728564, lng: -51.49301638451956, name: "Point 1" },
@@ -24,6 +36,10 @@ var points = [
     { lat: -22.906847, lng: -43.172896, name: "Point 3" },
     { lat: -15.7801, lng: -47.9292, name: "Point 4" }
 ];
+
+
+//adiciona endereço a lista de pontos
+// points.push({lat: parseFloat(address.lat), lng: parseFloat(address.lon), name: "Endereço"});
 
 // Adiciona marcadores para cada ponto no mapa
 // Função para carregar o conteúdo do popup a partir de um arquivo HTML
