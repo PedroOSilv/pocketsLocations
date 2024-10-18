@@ -1,0 +1,73 @@
+<div class="principal">
+    <div class="d-flex flex-wrap lateral-esquerda ">
+        {{#each pockets}}
+
+        <div id="card" class="animate__animated animate__fadeIn">
+            <div class=" d-flex flex-column align-items-start">
+                <div class="cardHead d-flex flex-column align-items-start">
+                    <h2 id="title">{{nome}}</h2>
+                    <p id="subtitle">{{descricao}}</p>
+                </div>
+                <p id="leader" class="card-infos"><img src="images/pessoa.png" id="icon-leader">{{lider}}</p>
+                <p id="day" class="card-infos"><img src="images/ring-calendar.png" id="icon-day"> {{diaDaSemana}}</p>
+                <p id="time" class="card-infos"><img src="images/relogio.png" id="icon-time"> {{horario}}</p>
+            </div>
+
+            <a href="https://www.instagram.com/{{instagram}}"><button id="cta-button">Quero conhecer</button></a>
+
+        </div>
+
+        {{else}}
+        <div id="card" class="animate__animated animate__fadeIn">
+            <div class=" d-flex flex-column align-items-start">
+                <div class="cardHead d-flex flex-column align-items-start">
+                    <h2 id="title">Nenhum bolso cadastrado</h2>
+                    <p id="subtitle">Crie um bolso para começar a compartilhar conhecimento</p>
+                </div>
+            </div>
+        </div>
+
+        {{/each}}
+
+    </div>
+
+    <div id="map" class="flex-grow-1"></div>
+</div>
+
+<script src="scripts/leaflet.js"></script>
+
+
+<script>
+    // para cada pockets atribui o valor as variáveis
+    var fireIcon = L.icon({
+        iconUrl: 'images/fogueira.png',
+        shadowUrl: '',
+
+        iconSize: [32, 32], // size of the icon
+        shadowSize: [50, 64], // size of the shadow
+        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+        shadowAnchor: [4, 62],  // the same for the shadow
+        popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+    });
+
+    {{#each pockets}}
+
+    // cria um marcador no mapa
+    popupContent = `
+        <div class="cardPoint">
+        <h2 id="h2Point">{{nome}}</h2>
+        <p id="pPoint" class="subtitle">{{descricao}}</p>
+        <p id="pPoint"><strong>Líder:</strong> {{lider}}</p>
+        <p id="pPoint"><strong>Dia:</strong> {{diaDaSemana}}</p>
+        <p id="pPoint"><strong>Horário:</strong> {{horario}}</p>
+        <button class="cta-button"><a style="text-decoration: none; color: white;"
+                href="https://www.instagram.com/{{instagram}}">Quero conhecer</a></button>
+    </div>
+    `;
+
+    var marker = L.marker([{{latitude}},{{longitude}}], { icon: fireIcon }).addTo(map);
+    marker.bindPopup(popupContent);
+
+    {{/each}}
+
+</script>
