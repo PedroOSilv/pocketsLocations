@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
 const principal = require("./routes/principal");
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
 //Configurações
     //Body Parser
@@ -17,6 +17,12 @@ const principal = require("./routes/principal");
         app.set("view engine", "handlebars");
     //Mongoose
 
+        mongoose.Promise = global.Promise;
+        mongoose.connect("mongodb://localhost/pocketsLocations").then(() => {
+            console.log("Conectado ao mongo");
+        }).catch((err) => {
+            console.log("Erro ao se conectar: " + err);
+        });
     //Public
         app.use(express.static(path.join(__dirname, "/public")));
     
