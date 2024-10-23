@@ -41,7 +41,6 @@ body {
 }
 
 .navbar {
-    /* flex-shrink: 0; */
     background-color: #370058 !important;
 }
 
@@ -63,7 +62,6 @@ html {
     .lateral-esquerda {
         display: none !important;
     }
-
     
     .lateral-esquerda {
       width: 100% !important;
@@ -72,21 +70,21 @@ html {
 
   #map {
       width: 100% !important;
-      height: 100vh !important; /* Ajusta a altura para metade da viewport */
+      height: calc(100vh - 56px) !important; /* Ajusta a altura para metade da viewport */
   }
 
     .button{
      /* mostra o botão */
       display: flex !important;
     }
-}
 
-.hidden {
-  display: none !important;
-}
-
-.show{
-  display: flex !important;
+    .hidden {
+      display: none !important;
+    }
+    
+    .show{
+      display: flex !important;
+    }
 }
 
 /* configurando botão sobre o mapa */
@@ -130,11 +128,12 @@ html {
     height: calc(100vh - 56px);
     overflow-y: auto;
     flex-wrap: wrap;
+    justify-content: space-around;
 
 }
 
 #map {
-    height: 100vh;
+    height: calc(100vh - 56px);
     width: 60%;
 }
 
