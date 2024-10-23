@@ -1,5 +1,5 @@
 <div class="principal">
-    <div class="d-flex flex-wrap lateral-esquerda ">
+    <div id="lateral-esquerda" class="d-flex lateral-esquerda ">
         {{#each pockets}}
 
         <div id="card" class="animate__animated animate__fadeIn">
@@ -31,7 +31,11 @@
 
     </div>
 
-    <div id="map" class="flex-grow-1"></div>
+    <div id="map" class="flex-grow-1">
+
+    </div>
+
+    <button id="btn-change" class="button"><img src="images/menu-aberto.png"></button>
 </div>
 
 <script src="scripts/leaflet.js"></script>

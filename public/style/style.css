@@ -57,6 +57,70 @@ html {
     display: flex;
 }
 
+/* responsividade */
+@media (max-width: 768px) {
+
+    .lateral-esquerda {
+        display: none !important;
+    }
+
+    
+    .lateral-esquerda {
+      width: 100% !important;
+      height: 100vh !important; /* Ajusta a altura para metade da viewport */
+  }
+
+  #map {
+      width: 100% !important;
+      height: 100vh !important; /* Ajusta a altura para metade da viewport */
+  }
+
+    .button{
+     /* mostra o botão */
+      display: flex !important;
+    }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show{
+  display: flex !important;
+}
+
+/* configurando botão sobre o mapa */
+.button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #580190;
+  border-radius: 50%;
+  border: 2px solid #370058; /* Define a borda */
+  outline: none !important; /* Remove a borda padrão do botão */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+}
+.button img {
+  width: 24px;
+  height: 24px;
+}
+
+.button:active{
+  border: 2px solid #580190 ; 
+  background-color: #370058;
+}
+
+/* qual solta o mouse */
+
+
+
 .lateral-esquerda {
     animation-name: expandir;
     animation-duration: 1s;
@@ -65,6 +129,7 @@ html {
     padding: 1rem;
     height: calc(100vh - 56px);
     overflow-y: auto;
+    flex-wrap: wrap;
 
 }
 
