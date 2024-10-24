@@ -4,6 +4,17 @@
     "express": "^4.21.1",
     "express-handlebars": "^8.0.1",
     "mongoose": "^8.7.2",
-    "nodemon": "^3.1.7"
-  }
+    "nodemon": "^3.1.7",
+    "pocketslocations": "file:"
+  },
+  "name": "pocketslocations",
+  "description": "Este repositório é um site destinado a mostrar as localizações das reuniões pockets por todo o mundo.",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
 }

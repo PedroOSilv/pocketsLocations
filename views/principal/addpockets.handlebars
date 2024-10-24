@@ -1,7 +1,7 @@
 {{!-- formulario para adicionar novo pockets --}}
 
 <div class="principal">
-    <div class="d-flex flex-wrap lateral-esquerda ">
+    <div id="lateral-esquerda" class="d-flex lateral-esquerda ">
         <div class="card-body">
             <form action="/novo" method="POST">
                 <div class="form-group">
@@ -43,6 +43,8 @@
     </div>
 
     <div id="map" class="flex-grow-1"></div>
+
+    <button id="btn-change" class="button"><img src="images/menu-aberto.png"></button>
 </div>
 
 <script src="scripts/leaflet.js"></script>
