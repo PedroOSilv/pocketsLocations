@@ -24,7 +24,7 @@ const mongoose = require("mongoose");
     //Mongoose
 
         mongoose.Promise = global.Promise;
-        mongoose.connect("mongodb+srv://pedroapsilva22:9MCUS4QBVSQa8B5c@pocketslocations.twnqx.mongodb.net/").then(() => {
+        mongoose.connect("mongodb+srv://pedroapsilva22:9MCUS4QBVSQa8B5c@cluster0.twnqx.mongodb.net/").then(() => {
             console.log("Conectado ao mongo");
         }).catch((err) => {
             console.log("Erro ao se conectar: " + err);
